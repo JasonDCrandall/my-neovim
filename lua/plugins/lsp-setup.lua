@@ -26,7 +26,7 @@ return {
       lspconfig.jsonls.setup({})
       lspconfig.html.setup({})
       lspconfig.gopls.setup({})
-      lspconfig.dokerls.setup({})
+      lspconfig.dockerls.setup({})
 
       vim.keymap.set('n','K', vim.lsp.buf.hover, {})
       vim.keymap.set('n','gd', vim.lsp.buf.definition, {})
