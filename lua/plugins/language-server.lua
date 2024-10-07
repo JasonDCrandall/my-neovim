@@ -1,37 +1,74 @@
 return {
   {
     "williamboman/mason.nvim",
+    lazy = false,
     config = function()
       require("mason").setup()
-    end
+    end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyright", "ts_ls", "yamlls", "sqlls", "cssls", "jsonls", "html", "dockerls" },
-      })
-    end
+    lazy = false,
+    opts = {
+      auto_install = true,
+    },
+    --config = function()
+    --	require("mason-lspconfig").setup({
+    --		ensure_installed = {
+    --			"lua_ls",
+    --			"pyright",
+    --			"ts_ls",
+    --			"yamlls",
+    --			"sqlls",
+    --			"cssls",
+    --			"jsonls",
+    --			"html",
+    --			"dockerls",
+    --		},
+    --	})
+    --end,
   },
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     config = function()
       local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({})
-      lspconfig.pyright.setup({})
-      lspconfig.ts_ls.setup({})
-      lspconfig.yamlls.setup({})
-      lspconfig.sqlls.setup({})
-      lspconfig.cssls.setup({})
-      lspconfig.jsonls.setup({})
-      lspconfig.html.setup({})
-      lspconfig.gopls.setup({})
-      lspconfig.dockerls.setup({})
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      vim.keymap.set('n','K', vim.lsp.buf.hover, {})
-      vim.keymap.set('n','<leader>gd', vim.lsp.buf.definition, {})
-      vim.keymap.set({'n', 'v' },'<leader>ca', vim.lsp.buf.code_action, {})
-    end
-  }
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.pyright.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.ts_ls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.yamlls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.sqlls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.cssls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.jsonls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.html.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.dockerls.setup({
+        capabilities = capabilities,
+      })
+
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
+  },
 }
-
