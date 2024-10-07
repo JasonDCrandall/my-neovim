@@ -5,11 +5,10 @@ return {
     local configs = require("nvim-treesitter.configs")
 
     configs.setup({
-      ensure_installed = {"lua","bash","css","gdscript", "gdshader","gitignore","go","html","javascript","json","markdown","python","scss","sql","terraform","tsx","typescript","xml","yaml"},
+      auto_install = true,
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },
     })
   end
 }
- 
