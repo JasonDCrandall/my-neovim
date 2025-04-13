@@ -6,6 +6,11 @@ if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
   vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
+-- Remap H to Page Up (scroll up)
+vim.keymap.set("n", "H", "<C-u>", { noremap = true })
+
+-- Remap L to Page Down (scroll down)
+vim.keymap.set("n", "L", "<C-d>", { noremap = true })
 
 -- validate that lazy is available
 if not pcall(require, "lazy") then
