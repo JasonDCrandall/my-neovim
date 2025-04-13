@@ -16,9 +16,11 @@ return {
     highlights = {
       init = { -- this table overrides highlights in all themes
         -- Normal = { bg = "#000000" },
+        Visual = { bg = "#D08770" },
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
+        Visual = { bg = "#D08770" },
       },
     },
     -- Icons can be configured throughout the interface

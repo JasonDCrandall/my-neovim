@@ -19,6 +19,9 @@ if not pcall(require, "lazy") then
   vim.fn.getchar()
   vim.cmd.quit()
 end
+--change the highlighting in visual mode
 
 require "lazy_setup"
 require "polish"
+
+vim.api.nvim_set_hl(0, "Visual", { bg = "#ebcb8b", fg = "#000000" })
