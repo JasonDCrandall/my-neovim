@@ -8,8 +8,6 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.colorscheme.nordic-nvim" },
-  { import = "astrocommunity.colorscheme.nord-nvim" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   -- import/override with your plugins folder
 }
